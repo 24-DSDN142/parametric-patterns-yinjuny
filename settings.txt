@@ -10,45 +10,649 @@ Your final settings.txt will look something like this when you are finished:
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
-/////////////////////////////////
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(150, 100 , flowerSize);
+  drawFlower(50, 70 , flowerSize);
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(x > 50){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(50, 70 , flowerSize);
+  drawFlower(150, 100 , flowerSize);
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(x > 150){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+
+Wallpaper 3:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(50, 70 , flowerSize);
+  drawFlower(150, 100 , flowerSize);
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(x > 100){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+Wallpaper 4:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(40, 70 , flowerSize);
+  drawFlower(100, 100 , flowerSize);
+  drawFlower(160, 70 , flowerSize)
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(x > 100){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+Wallpaper 5:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(40, 70 , flowerSize);
+  drawFlower(100, 100 , flowerSize);
+  drawFlower(160, 70 , flowerSize)
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(y > 80){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+Wallpaper 6:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(40, 70 , flowerSize);
+  drawFlower(100, 100 , flowerSize);
+  drawFlower(160, 70 , flowerSize)
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(y > 80){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+Wallpaper 7:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 0;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(40, 70 , flowerSize);
+  drawFlower(100, 100 , flowerSize);
+  drawFlower(160, 70 , flowerSize)
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(y > 80){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+Wallpaper 8:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(40, 70 , flowerSize);
+  drawFlower(100, 100 , flowerSize);
+  drawFlower(160, 70 , flowerSize)
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(y < 80){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
+}
+Wallpaper 9:
+let flowerSize = 50;
+let flowerPetalColor = '#FFA500'; 
+let flowerCenterColor = '#FFFFFF'; 
+let stemColor = '#008000';
+
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+function wallpaper_background() {
+  background('#FFFACD'); 
+
+}
+
+function my_symbol() {
+  drawFlower(50, 70 , flowerSize);
+  drawFlower(150, 100 , flowerSize);
+}
+
+// drawFlower(100, 100 , flowerSize);
+
+function drawFlower(x, y, size) {
+
+  let petalColor = flowerPetalColor;
+  
+  let petalSize = size / 2;
+  let centerSize = size / 3;
+  let stemLength = size * 1.75;
+
+  if(y < 80){
+    petalColor = '#4169e1'
+  }
+  
+
+  push(); 
+  translate(x, y);
+
+  stroke(stemColor);
+  strokeWeight(4);
+  line(0, 0, 0, stemLength);
+
+
+  noStroke();
+  fill(petalColor);
+  ellipse(-petalSize, 0, petalSize, petalSize); 
+  ellipse(petalSize, 0, petalSize, petalSize); 
+  ellipse(0, -petalSize, petalSize, petalSize); 
+  ellipse(0, petalSize, petalSize, petalSize); 
+
+
+  fill(flowerCenterColor);
+  ellipse(0, 0, centerSize, centerSize);
+
+  pop(); 
+}
+
+function windowResized() {
+  resizeCanvas(2000, 1000); 
+  wallpaper_background();
+  my_symbol(); 
+  redraw();
 }
